@@ -14,7 +14,8 @@ define([
 		},
 		
 		initialize: function() {
-			_.bindAll(this, "deleteFromAlbum", "toggleLike");
+			_.bindAll(this, "deleteFromAlbum", "toggleLike", "render");
+			this.model.on("change:is_like", this.render);
 		},
 		
 		render: function() {
@@ -30,7 +31,7 @@ define([
 	    		}
 	    	});
 	    },
-	    
+	    	    
 	    toggleLike: function() {
 	    	var isLiked = this.model.get("is_like") == 1;
 	    	this.model.save({is_like : isLiked ? "0" : "1"});

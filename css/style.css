@@ -299,7 +299,7 @@ body {
 
 /*img {  max-width: 100% }*/
 
-.caption i {
+.caption i.icon-ok {
 	float: right;
 	margin-top: -19px;
 }
