@@ -1,0 +1,23 @@
+ <div class="thumbnail">
+	<iframe src='http://player.vimeo.com/video/<%= id %>' 
+		width='260' height='180' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen>
+	</iframe>
+	<div class="caption">
+		<h5>Действия</h5>
+	
+		<div class="btn-group">
+			<button class="btn" id="add_secondary">Добавить</button>
+			<% if (mode=="new") { %>
+				<button class="btn dropdown-toggle" data-toggle="dropdown">
+					<span class="caret"></span>
+				</button>
+				<ul class="dropdown-menu">
+					<li><a href="javascript:void(0)" id="add_main">Добавить как главное видео</a></li>			    
+				</ul>
+			<% } %>
+		</div>
+		<% if (typeof(added_as_secondary) != "undefined" && added_as_secondary) { %>
+			<i class="icon-ok"></i>
+		<% } %>
+	</div>
+</div>

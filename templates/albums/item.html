@@ -1,0 +1,16 @@
+<header>
+	<h1>
+		<a href="#/albums/<%= id %>"><%= title %> </a>
+		<small><%=total_videos %> <%= video_label%></small>   			
+	</h1>
+</header>
+<div class="preview">
+	<picture alt="<%= thumbnail_video.title %>">
+  		<source src="<%= thumbnail_video.thumbnails.thumbnail[0]._content %>">
+  		<source src="<%= thumbnail_video.thumbnails.thumbnail[1]._content %>" media="(min-width: 400px)">
+  		<source src="<%= thumbnail_video.thumbnails.thumbnail[2]._content %>" media="(min-width: 800px)">
+  	</picture>
+</div>
+<footer>
+	<span class="description"><%= description %><span>
+</footer>
