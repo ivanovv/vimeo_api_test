@@ -1,4 +1,4 @@
-# Vimeo API wrapper by Undev using Backbone, Twitter Bootstrap & HTML5BP
+# Consuming Vimeo API with Backbone, Twitter Bootstrap & HTML5BP
 
 
 * Web: http://ec2-176-34-163-125.eu-west-1.compute.amazonaws.com/
