@@ -293,7 +293,7 @@ td { vertical-align: top; }
 
 /*img {  max-width: 100% }*/
 
-.caption i {
+.caption>i {
 	float: right;
 	margin-top: -19px;
 }
