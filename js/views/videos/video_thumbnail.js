@@ -6,7 +6,7 @@ define([
 ], function($, _, Backbone, template){
 	var VideoThumbnailView = Backbone.View.extend({
 		tagName: "li",
-		className: "span3",
+		className: "span5",
 		template: _.template(template),
 		events: {
 			"click #delete_from_album" : "deleteFromAlbum",
@@ -24,12 +24,14 @@ define([
 	    },
 	    
 	    deleteFromAlbum : function (){
-	    	var self = this;
-	    	this.model.destroy({
-		    	success: function(){
-		    		self.remove()
-	    		}
-	    	});
+		    if (confirm("Удалить видео из этого альбома?")) {
+		    	var self = this;
+		    	this.model.destroy({
+			    	success: function(){
+			    		self.remove()
+		    		}
+		    	});
+	    	}
 	    },
 	    	    
 	    toggleLike: function() {

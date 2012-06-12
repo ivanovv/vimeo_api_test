@@ -9,9 +9,21 @@ define([
 		model : Video,
 		
 		initialize : function(options) {  
-			_.bindAll(this, "getMainVideo", "getSecondaryVideos");
+			_.bindAll(this, "getMainVideo", "getSecondaryVideos", "checkMainVideo");
 			if (options && options.album_id)
 				this.album_id = options.album_id;
+			this.on("change", this.checkMainVideo);
+		},
+		
+		checkMainVideo : function(model, options) { 
+			if (options.changes && options.changes.added_as_main && model.get("added_as_main")) {
+				var previousMainVideo = _(this.where({added_as_main : true})).select(function(video){ return video.id != model.id});
+				if (previousMainVideo.length > 0) {
+					_(previousMainVideo).each(function(video) {
+						video.set({added_as_main: false, added_as_secondary: true});						
+					});
+				}				
+			}
 		},
 		
 		getMainVideo: function() {

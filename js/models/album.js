@@ -19,8 +19,14 @@ var Album = Backbone.Model.extend({
 	},
 	 
 	video_label: function(){
+		return "видео";
+		/*
 		var count = this.get("total_videos");
-		return count == 1 ? "video" : "videos";
+		if (count > 10) count = count % 10;
+		if (count == 1)  return "ролик";
+		if (count == 2 || count == 3 || count == 4) return "ролика";
+		return "роликов";
+		*/
 	},
 	 
 	sync : function(method, model, options){

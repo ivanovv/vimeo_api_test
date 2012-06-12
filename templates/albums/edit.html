@@ -33,8 +33,14 @@
       		<div id="control" class="control-group">
 	    		<label class="control-label" for="search">Поиск видео</label>
 	    		<div class="controls">
-	    			<input type="search" class="input-xlarge" id="search_query" placeholder="Искать" />
+	    			<input type="search" class="input-xlarge" id="search_query" placeholder="Искать" />	
 	    			<button class="btn btn-primary btn-default" id="search_btn">Искать</button>
+	    			<p class="help-block">
+		    			<% if (mode== "new" ) { %>
+		    				Как минимум один ролик надо добавить как главный, изображение с него будет использовано как обложка альбома.
+		    			<% } else { %>
+		    			<% } %>
+	    			</p>
 	    		</div> 
 	    	</div>
       	</form>

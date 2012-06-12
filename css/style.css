@@ -34,8 +34,6 @@ html { font-size: 100%; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 10
 
 html, button, input, select, textarea { font-family: sans-serif; color: #222; }
 
-body { margin: 0; font-size: 1em; line-height: 1.4; }
-
 /*
  * Remove text-shadow in selection highlight: h5bp.com/i
  * These selection declarations have to be separate
@@ -293,17 +291,28 @@ td { vertical-align: top; }
 }
 
 
-body {
-        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
-}
-
 /*img {  max-width: 100% }*/
 
-.caption i.icon-ok {
+.caption i {
 	float: right;
 	margin-top: -19px;
 }
 
 article.album {
 	padding-bottom: 30px;
+}
+
+.thumbnail .iframe-holder {
+	margin: 0 auto;
+	/*width: 260px;*/
+}
+
+body {
+	background: url('../img/gplaypattern.png');
+}
+
+@media (min-width: 979px) {
+		body {
+			padding-top: 60px;
+		}
 }

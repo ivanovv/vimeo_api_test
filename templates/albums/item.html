@@ -1,16 +1,21 @@
-<header>
-	<h1>
-		<a href="#/albums/<%= id %>"><%= title %> </a>
-		<small><%=total_videos %> <%= video_label%></small>   			
-	</h1>
+<header class="accordion-heading">
+	<div class="accordion-toggle" data-toggle="collapse" data-parent="#album-accordion" href="#collapse<%= id%>">
+	    <h2>
+	    	<%= title %>
+	    	<small><%= description %></small>
+	    	<small style="display:block;"><%=total_videos %> <%= video_label%></small>	    	
+	    </h2>
+	    
+	    <picture alt="<%= thumbnail_video.title %>">
+  			<source src="<%= thumbnail_video.thumbnails.thumbnail[0]._content %>">
+  			<source src="<%= thumbnail_video.thumbnails.thumbnail[1]._content %>" media="(min-width: 400px)">
+  			<source src="<%= thumbnail_video.thumbnails.thumbnail[2]._content %>" media="(min-width: 800px)">
+  		</picture>
+  	</div>
+  	
 </header>
-<div class="preview">
-	<picture alt="<%= thumbnail_video.title %>">
-  		<source src="<%= thumbnail_video.thumbnails.thumbnail[0]._content %>">
-  		<source src="<%= thumbnail_video.thumbnails.thumbnail[1]._content %>" media="(min-width: 400px)">
-  		<source src="<%= thumbnail_video.thumbnails.thumbnail[2]._content %>" media="(min-width: 800px)">
-  	</picture>
-</div>
-<footer>
-	<span class="description"><%= description %><span>
-</footer>
+
+<div id="collapse<%= id %>" class="accordion-body collapse">
+	<div class="accordion-inner">
+	</div>
+</div>              

@@ -4,6 +4,18 @@ define([
 ], function(_, Backbone){
 	var Video = Backbone.Model.extend({
 	
+		initialize: function() {
+			_.bindAll(this, "addedAsMain");
+			this.on("change:added_as_main", this.addedAsMain);
+		},
+		
+		addedAsMain : function(args) {  
+			if (this.get("added_as_main")) {
+				this.set({ added_as_secondary: false });
+			}
+		},
+		
+	
 		sync : function(method, model, options){
 			if (method == "update") {
 				 if (_(options.changes).has("is_like") && options.changes.is_like) {

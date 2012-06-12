@@ -1,11 +1,13 @@
  <div class="thumbnail">
-	<iframe src='http://player.vimeo.com/video/<%= id %>' 
-		width='260' height='180' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen>
+ 	<!--div class="iframe-holder"-->
+	<iframe src='http://player.vimeo.com/video/<%= id %>?portrait=0&byline=0' 
+		width='100%' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen>
 	</iframe>
+	<!--/div-->
 	<div class="caption">	
 		<div class="btn-group">
 			<button class="btn" id="toggle_like"><% if (is_like == 0) {%> <i class="icon-heart"></i>Лайкнуть<% } else { %> Разлайкать <% } %> </button>
-			<button class="btn" id="delete_from_album">Удалить из альбома</button>			
+			<button class="btn" id="delete_from_album">Удалить</button>			
 		</div>
 	</div>
 </div>

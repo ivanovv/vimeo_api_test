@@ -79,6 +79,7 @@ define([
 		render: function() {
 			var data = this.model.toJSON();
 			data.form_title = this.form_title;
+			data.mode = this.mode;
 			$(this.el).html(this.template(data));
 			this.setNoteText();
 			$("#modal").html(this.el).modal();

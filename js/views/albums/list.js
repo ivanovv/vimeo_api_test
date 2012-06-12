@@ -22,6 +22,7 @@ define([
 	render: function() {
 		$(this.el).empty();
 		this.collection.each(function(element){this.addOne(element);}, this);
+		window.picturefill();
 		return this;
 	}
 	
