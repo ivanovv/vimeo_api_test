@@ -49,7 +49,10 @@ define([
 		},
 	  
 		save: function() {
-			if (!this.titleChanged()) return false;
+			if (!this.titleChanged()) { 
+				this.$el.find("#formTabs li:first-child a").tab('show');
+				return false;
+			}
 			var secondary_videos = this.videos.getSecondaryVideos();
 			var saved = this.model.save(
 				{ 
@@ -74,6 +77,7 @@ define([
 			$("#modal").modal("hide");
 			this.undelegateEvents();
 			this.$el.empty();
+			Backbone.history.navigate("#");
 		},
 	
 		render: function() {

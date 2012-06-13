@@ -10,7 +10,10 @@ define([
 		form_title : "Новый альбом",
 		
 		save: function() {
-			if (!this.titleChanged()) return false;
+			if (!this.titleChanged()) {
+				this.$el.find("#formTabs li:first-child a").tab('show');
+				return false;
+			}
 			var main_video = this.videos.getMainVideo();
 			if (!main_video) { alert("Необходимо указать ролик для альбома."); return false; }
 			var secondary_videos = this.videos.getSecondaryVideos();
